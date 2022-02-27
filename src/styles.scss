@@ -1,0 +1,149 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap');
+.home-content{
+    height: 100vh;
+}
+
+html, body { height: 100%; }
+body { margin: 0;
+     font-family:'Montserrat', sans-serif !important; 
+    font-size: 16px !important;}
+h3{
+    font-size: 1.75rem !important;
+}
+h2{
+    font-size: 2rem !important;
+}
+h4 {
+    font-size: 1.5rem !important;
+}
+h5 {
+    font-size: 1.25rem !important;
+}
+h6{
+    font-size: 1rem !important;
+}
+.dropdown-toggle{
+    border: 1px solid #ced4da;
+
+}
+.cdk-overlay-backdrop {
+    z-index: 100; 
+}
+.input-error{
+    border: #ff00006e solid 1px;
+}
+.input-normal{
+    border: 1px solid #ced4da;;
+}
+/* home */
+.home{
+    /* background-image: url('./assets/images/airline-new-generic.jpg'); */
+    /* background-position: top; */
+    background-position-x: right;
+    background-image: url('./assets/images/airline-new-generic.jpg');
+
+}
+.content{
+    background-color: #e5e5e580;
+    border-radius: 6px;
+}
+/* reservation  */
+.reservation{
+    background-color: #e5e5e5;
+    min-height: 100vh;
+    color: #042759;
+}
+.traveler-data{
+padding: 30px;
+margin: auto;
+background: white;
+border-radius: 8px;
+/* text-align: center; */
+width: 70%;
+}
+/* flights */
+.flights{
+    background-color: #e5e5e5;
+    min-height: 100vh;
+    color: #042759;
+}
+.header{
+    background-color: #042759;
+    border-radius: 0 0 10px 10px;
+}
+.flight{
+    background-color: #fff;
+}
+.gray-color{
+    color: #444560;
+}
+.flightIcon{
+    animation: flightAnimation 1s linear 0s infinite normal forwards;
+}
+@keyframes flightAnimation {
+    0% {
+        opacity: 0;
+        transform: translateX(-30px);
+      }
+    
+      25% {
+        opacity: 1;
+        transform: translateX(-20px);
+      }
+      70% {
+        opacity: 1;
+        transform: translateX(-5px);
+      }
+      100%{
+          opacity: 0;
+          transform: translateX(0px);
+      }
+  }
+/* .modal-backdrop.show {
+    opacity: .7;
+  }
+  .modal{
+    backdrop-filter: blur(2px);
+    }
+    .modal .modal-content{
+    background-color: #2F3243  !important;
+    padding-top: 15px;
+    font-size: 1.4rem;
+    }
+    .modal .modal-header ,.modal .modal-body{
+    padding: 1.2rem 1.9rem 0.9rem 2.5rem;
+    }
+    .modal-body{
+      padding-bottom: 3.5rem !important;
+      }
+    .modal .modal-header .modal-title{
+    font-size: 1.4rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    }
+    .modal-dialog {
+    max-width: 58%;
+    box-shadow: 0px 3px 6px #00000029;
+    }
+    .modal .exit-icon {
+    font-size: 3rem;
+    font-weight: 100;
+    color: #fff;
+    }
+    .modal-btns{
+    border: 1px solid #0088CC !important;
+    color: #0088CC;
+    width: 40%;
+    }
+    .modalBtn{
+    background-color: #0088CC;
+    color: #fff;
+    }
+    #deleteDeviceModal .modal-body h5
+    {
+    font-size: 1.7rem;
+    font-weight: 100;
+    } */

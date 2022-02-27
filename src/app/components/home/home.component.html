@@ -1,0 +1,48 @@
+
+<div class="home">
+    <div class="container">
+        <div class="home-content">
+            <div class="h-75 d-flex justify-content-center align-items-center">
+    
+        <div class="content p-3  w-100 h-25 d-flex justify-content-center align-items-center">
+            <div class="row w-100">
+                <div class="col-md-6 ">
+                    <div class="search-group">
+                        <div class="input-group flex-column">
+                            <label for="fromCountry" class="ps-3">From</label>
+                            <select   id="fromCountry" placeholder="From " [(ngModel)]="fromCountry" class="w-100 form-control search py-2 rounded-pill mr-1 pr-5">
+                                <option [ngValue]="" disabled selected>Select your option</option>
+                                <option *ngFor="let country of countries" [ngValue]="country" class="dropdown-item">{{ country.name }}</option>
+                            </select>
+                          
+                      </div>
+                       </div>
+                </div>
+                <div class="col-md-6 ">
+                    
+                        <div class="search-group">
+                            <div class="input-group flex-column">
+                                <label for="fromCountry" class="ps-3"> To</label>
+                            <select   id="toCountry" placeholder="To ..." [(ngModel)]="toCountry" class=" w-100 form-control search py-2 rounded-pill mr-1 pr-5">
+                                <option [ngValue]="" disabled selected>Select your option</option>
+                                <option *ngFor="let country of countries" [ngValue]="country" class="dropdown-item">{{ country.name }}</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row mt-3 mx-auto">
+                <div class="col-md-12 pe-0 ">
+                    <button class="btn btn-warning" (click)="searchFlight()"> <i  class="fa-solid fa-magnifying-glass text-white"></i> </button>
+                </div>
+
+            </div>
+            
+        </div>
+        
+    </div>
+    
+    </div>
+    </div>
+</div>

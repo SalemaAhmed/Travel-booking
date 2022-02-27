@@ -1,0 +1,41 @@
+<div class="header py-3">
+    <div class="container">
+        
+        <h2 class="text-white m-0"><i class="flightIcon fa-solid fa-plane fa-2xs pe-1"></i>Available Flights </h2>
+
+    </div>
+    
+</div>
+<div class="flights">
+    <div class="container">
+        <div class="w-75 m-auto pt-4">
+            <div class="flight my-4 p-2 rounded-3" *ngFor='let flight of flightsData let i=index'>
+                <div class="row">
+                    <div class="col-lg-4">
+                        <img class="w-100 h-100" [src]="imgPrefix+flight.toCityImg" alt="cityImg">
+                    </div>
+                    <div class="col-lg-8 pe-4 pt-8">
+                        <div class="row">
+                            <div class="col-9">
+                                <h3 class="pb-2 gray-color">{{flight.toAirPort}}</h3>
+                            </div>
+                            <div class="col-3">
+                                <button class="btn btn-warning text-white" (click)="bookFlight(flight)">Book</button>
+                            </div>
+                            
+                        </div>
+                        
+                        <hr class="mt-0">
+                        <p> <i class="fas fa-map-marked-alt pe-1 gray-color"></i> From <i class="fa-solid fa-arrow-right px-3"></i>{{flight.fromAirPort}}</p>
+                        <p><i class="fa-solid fa-hand-holding-dollar pe-1 fa-lg gray-color"></i> Price <i class="fa-solid fa-arrow-right px-3"></i>{{flight.price}}</p> 
+                        <p><i class="fa-regular fa-clock pe-1 gray-color" ></i> Time To Leave <i class="fa-solid fa-arrow-right px-3"></i>{{flight.departureTime}}</p> 
+                        <p><i class="fa-solid fa-clock pe-1 gray-color" ></i> Time To Arrive <i class="fa-solid fa-arrow-right px-3"></i>{{flight.arrivalTime}}</p> 
+                    </div>
+                </div>
+                
+    
+            </div>
+        </div>
+        
+    </div>
+</div>

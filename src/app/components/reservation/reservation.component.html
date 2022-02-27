@@ -1,0 +1,123 @@
+<div *ngIf="notification?.notify" [ngClass]="notification.type =='success' ? 'alert alert-success' : 'alert alert-danger' ">
+    <strong>Your Trip To {{trip?.toAirPort ? trip?.toAirPort :'Your Distination'}} is Booked Succesfully</strong>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+<div class="reservation">
+    <div class="container">
+        <div class="traveler-data">
+            <h3>Reservation For {{trip?.toAirPort ? trip?.toAirPort : 'Traveler'}} </h3>
+            <hr>
+            <form [formGroup]="purchasingForm" (ngSubmit)="submitForm(purchasingForm)" >
+                <div class="row my-4">
+                    <div class="col-md-4">
+                        <label  >*Traveler Name :</label> 
+                    </div>
+                    <div class="col-md-7">
+                        <input type="text" formControlName="travelerName" class="form-control  bg-transparent "  [ngClass]="(purchasingForm.get('travelerName')?.errors && purchasingForm.get('travelerName')?.touched) ? 'border border-danger':' input-normal'">
+                        <!-- validation Alert -->
+                         <div *ngIf="purchasingForm.get('travelerName')?.errors && purchasingForm.get('travelerName')?.touched" class=" text-danger"> <!--alert border border-danger--> 
+                            <p *ngIf="purchasingForm.get('travelerName')?.errors?.['required']"> Traveler Name is required</p>
+                            <p *ngIf="purchasingForm.get('travelerName')?.errors?.['minlength']"> Traveler Name min length is 3</p>
+                            <p *ngIf="purchasingForm.get('travelerName')?.errors?.['maxlength']"> Traveler Name max length is 100</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row my-4">
+                    <div class="col-md-4">
+                        <label  >*Date Of Birth :</label>
+                    </div>
+                    <div class="col-md-7">
+                        <div class="input-group date-picker">
+                            <div class="mat-app-background basic-container" style="background-color: white">
+                            <mat-form-field appearance="fill" >
+                                <mat-label>Choose a date</mat-label>
+                                <input class="" readonly matInput  [max]="maxDate" [matDatepicker]="addpicker" formControlName="dateOfBirth">
+                                <mat-datepicker-toggle matSuffix [for]="addpicker"></mat-datepicker-toggle>
+                                <mat-datepicker #addpicker ></mat-datepicker>
+                              </mat-form-field>
+                            </div>
+                          </div>
+                        <!-- validation Alert -->
+                         <div *ngIf="purchasingForm.get('dateOfBirth')?.errors && purchasingForm.get('dateOfBirth')?.touched" class=" text-danger"> <!--alert border border-danger--> 
+                            <p *ngIf="purchasingForm.get('dateOfBirth')?.errors?.['required']"> Date Of Birth is required</p>
+                            <p *ngIf="purchasingForm.get('dateOfBirth')?.errors?.['minlength']"> Date Of Birth min length is 3</p>
+                            <p *ngIf="purchasingForm.get('dateOfBirth')?.errors?.['maxlength']"> Date Of Birth max length is 100</p>
+                        </div>
+                    </div>
+                </div>
+                <div class=" row my-4">
+                    <div class="col-md-4">
+                        <label  >*Contact Preference </label>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="form-check ">
+                            <input class="form-check-input" type="radio" formControlName="contactPreference"  value="email" id="flexRadioEmail" >
+                            <label class="form-check-label" for="flexRadioEmail">
+                              Email
+                            </label>
+                          </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="form-check ">
+                            <input class="form-check-input" type="radio" formControlName="contactPreference"  value="mobile" id="flexRadioPhone" >
+                            <label class="form-check-label" for="flexRadioPhone">
+                              Mobile
+                            </label>
+                          </div>
+                    </div>
+                    
+                   
+                </div>
+                <div class="row my-4">
+                    <div class="col-md-4">
+                        <label  >Email :</label>
+                    </div>
+                    <div class="col-md-7">
+                        <input type="email" formControlName="email" class="form-control  bg-transparent ">
+                        <!-- validation Alert -->
+                         <div *ngIf="purchasingForm.get('email')?.errors && purchasingForm.get('email')?.touched" class=" text-danger"> <!--alert border border-danger--> 
+                            <p *ngIf="purchasingForm.get('email')?.errors?.['required']"> Email is required</p>
+                            <p *ngIf="purchasingForm.get('email')?.errors?.['emailDomain']"> Email Domain must be gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row my-4">
+                    <div class="col-md-4">
+                        <label  >Mobile :</label>
+                    </div>
+                    <div class="col-md-7">
+                        <input type="number" formControlName="mobile" class="form-control  bg-transparent ">
+                        <span class="text-muted">ex : 01xxxxxxxxx</span>
+                        <!-- validation Alert -->
+                         <div *ngIf="purchasingForm.get('mobile')?.errors && purchasingForm.get('mobile')?.touched" class=" text-danger"> <!--alert border border-danger--> 
+                            <p *ngIf="purchasingForm.get('mobile')?.errors?.['required']"> mobile is required</p>
+                            <p *ngIf="purchasingForm.get('mobile')?.errors?.['pattern']"> mobile filed contains invalid number</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row my-4">
+                    <div class="col-md-4">
+                        <label  > Nationality :</label>
+                    </div>
+                    <div class="col-md-7">
+                        <select id="nationality" formControlName="nationality" class="btn btn-secondary dropdown-toggle w-100 bg-transparent text-dark">
+                            <option [ngValue]="" disabled selected>Select your option</option>
+                            <option *ngFor="let nationality of nationalities ; let i=index" [ngValue]="nationality" class="dropdown-item">{{ nationality.demonym }}</option>
+                        </select>
+                    </div>
+                </div> 
+                <div class="d-flex justify-content-center">
+                    <button class="btn btn-outline-warning mx-3 " routerLink='/flights' [queryParams]="{from: trip}">Cancel</button>
+                <button type="submit" [disabled]="purchasingForm.invalid" class="btn btn-warning  text-white" (click)="initializePayment(trip.price ? trip.price : 1000)">Paymant of ${{trip.price ? trip.price : '1000'}} </button>
+                </div>
+                
+            </form>
+        </div>
+       
+    </div>
+</div>
+      
+    

@@ -1,0 +1,15 @@
+<div class="modal-header">
+    <h4 class="modal-title">Booking</h4>
+    <button type="button" class="close btn btn-danger" data-dismiss="modal" aria-label="Close"
+        (click)="activeModal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="modal-body">
+    <h6 class="my-2 ">Your Trip To {{trip?.toAirPort ? trip?.toAirPort :'Your Distination'}} is Booked Succesfully</h6>
+</div>
+<div class="modal-footer">
+    <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+    <button type="button" class="btn btn-warning" data-dismiss="modal"
+        (click)="activeModal.dismiss('Cross click')">OK</button>
+</div>
