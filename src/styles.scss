@@ -51,7 +51,14 @@ h6{
 }
 @media only screen and (max-width: 770px) {
   .content {
-    height: 50% !important
+    height: 50% !important;
+    flex-direction: column;
+  }
+  p{
+    font-size: smaller;
+  }
+  h3{
+    font-size: 1.5rem !important
   }
 }
 /* reservation  */
@@ -68,6 +75,7 @@ border-radius: 8px;
 /* text-align: center; */
 width: 70%;
 }
+.mat-form-field-appearance-fill .mat-form-field-flex {padding: 0;}
 /* flights */
 .flights{
     background-color: #e5e5e5;

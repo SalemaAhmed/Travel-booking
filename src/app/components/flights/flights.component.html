@@ -15,11 +15,11 @@
                         <img class="w-100 h-100" [src]="imgPrefix+flight.toCityImg" alt="cityImg">
                     </div>
                     <div class="col-lg-8 pe-4 pt-8">
-                        <div class="row">
+                        <div class="row pt-2">
                             <div class="col-9">
                                 <h3 class="pb-2 gray-color">{{flight.toAirPort}}</h3>
                             </div>
-                            <div class="col-3">
+                            <div class="col-3 p-0">
                                 <button class="btn btn-warning text-white" (click)="bookFlight(flight)">Book</button>
                             </div>
                             
@@ -28,8 +28,8 @@
                         <hr class="mt-0">
                         <p> <i class="fas fa-map-marked-alt pe-1 gray-color"></i> From <i class="fa-solid fa-arrow-right px-3"></i>{{flight.fromAirPort}}</p>
                         <p><i class="fa-solid fa-hand-holding-dollar pe-1 fa-lg gray-color"></i> Price <i class="fa-solid fa-arrow-right px-3"></i>{{flight.price}}</p> 
-                        <p><i class="fa-regular fa-clock pe-1 gray-color" ></i> Time To Leave <i class="fa-solid fa-arrow-right px-3"></i>{{flight.departureTime}}</p> 
-                        <p><i class="fa-solid fa-clock pe-1 gray-color" ></i> Time To Arrive <i class="fa-solid fa-arrow-right px-3"></i>{{flight.arrivalTime}}</p> 
+                        <p><i class="fa-regular fa-clock pe-1 gray-color" ></i> Time To Leave <i class="fa-solid fa-arrow-right px-2"></i>{{flight.departureTime}}</p> 
+                        <p><i class="fa-solid fa-clock pe-1 gray-color" ></i> Time To Arrive <i class="fa-solid fa-arrow-right px-2"></i>{{flight.arrivalTime}}</p> 
                     </div>
                 </div>
                 
