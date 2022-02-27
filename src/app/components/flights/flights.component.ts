@@ -14,7 +14,7 @@ export class FlightsComponent implements OnInit {
   fromCountry:any;
   toCountry:any;
   flightsData:any;
-  imgPrefix='../../../assets/images/'
+  imgPrefix='./assets/images/'
   ngOnInit(): void {
     this.fromCountry=this._ActivatedRoute.snapshot.queryParams['fromCountryId'];
     console.log("dsaaaaa",this.fromCountry)
