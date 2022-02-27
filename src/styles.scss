@@ -49,6 +49,11 @@ h6{
     background-color: #e5e5e580;
     border-radius: 6px;
 }
+@media only screen and (max-width: 770px) {
+  .content {
+    height: 50% !important
+  }
+}
 /* reservation  */
 .reservation{
     background-color: #e5e5e5;
