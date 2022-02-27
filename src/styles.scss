@@ -2,6 +2,7 @@
 
 @import '~@angular/material/prebuilt-themes/indigo-pink.css';
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap');
+$default-gray: #ced4da;
 .home-content{
     height: 100vh;
 }
@@ -26,7 +27,7 @@ h6{
     font-size: 1rem !important;
 }
 .dropdown-toggle{
-    border: 1px solid #ced4da;
+    border: 1px solid $default-gray;
 
 }
 .cdk-overlay-backdrop {
@@ -36,12 +37,10 @@ h6{
     border: #ff00006e solid 1px;
 }
 .input-normal{
-    border: 1px solid #ced4da;;
+    border: 1px solid $default-gray;;
 }
 /* home */
 .home{
-    /* background-image: url('./assets/images/airline-new-generic.jpg'); */
-    /* background-position: top; */
     background-position-x: right;
     background-image: url('./assets/images/airline-new-generic.jpg');
 
@@ -102,48 +101,3 @@ width: 70%;
           transform: translateX(0px);
       }
   }
-/* .modal-backdrop.show {
-    opacity: .7;
-  }
-  .modal{
-    backdrop-filter: blur(2px);
-    }
-    .modal .modal-content{
-    background-color: #2F3243  !important;
-    padding-top: 15px;
-    font-size: 1.4rem;
-    }
-    .modal .modal-header ,.modal .modal-body{
-    padding: 1.2rem 1.9rem 0.9rem 2.5rem;
-    }
-    .modal-body{
-      padding-bottom: 3.5rem !important;
-      }
-    .modal .modal-header .modal-title{
-    font-size: 1.4rem;
-    font-weight: 600;
-    letter-spacing: 2px;
-    }
-    .modal-dialog {
-    max-width: 58%;
-    box-shadow: 0px 3px 6px #00000029;
-    }
-    .modal .exit-icon {
-    font-size: 3rem;
-    font-weight: 100;
-    color: #fff;
-    }
-    .modal-btns{
-    border: 1px solid #0088CC !important;
-    color: #0088CC;
-    width: 40%;
-    }
-    .modalBtn{
-    background-color: #0088CC;
-    color: #fff;
-    }
-    #deleteDeviceModal .modal-body h5
-    {
-    font-size: 1.7rem;
-    font-weight: 100;
-    } */
